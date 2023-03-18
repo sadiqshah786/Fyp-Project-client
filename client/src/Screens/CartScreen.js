@@ -1,7 +1,7 @@
+import { Divider } from 'antd';
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { url } from '../actions/BackendUrl';
 import { addToCart, removeFromCart } from '../actions/cartActions';
 import MessageBox from '../component/MessageBox';
 
@@ -31,7 +31,7 @@ function CartScreen(props) {
                 <ul className="cart-list-container">
                     <li keys={productId}>
                         <h3>
-                            Shopping Cart
+                        YOUR CART
                         </h3>
                         <div>
                             Price
@@ -39,14 +39,15 @@ function CartScreen(props) {
                     </li>
                     {
                         cartItem.length === 0 ?
-                            <MessageBox  variant="danger">
-                                Cart is empty <Link to="/product">Go Shopping</Link>
-                            </MessageBox>
+                            <div className='empty'  variant="danger">
+                              <p>  Cart is empty <Link to="/product">
+                                <span>Go Shopping</span></Link></p>
+                            </div>
                             :
                             cartItem.map(item =>
-                                <li key={item.product}>
+                                <li className='productCart' key={item.product}>
                                     <div className="cart-image">
-                                        <img src={`${url}${item.image}`} alt={item.name} />
+                                        <img src={item.image} alt={item.product} />
                                     </div>
                                     <div className="cart-name">
                                         <div>
@@ -63,13 +64,16 @@ function CartScreen(props) {
                                                     <option key={x + 1} value={x + 1}>{x + 1}</option>
                                                 )}
                                             </select>
-                                            <button  type="button" className="button" onClick={() => removeFromCartHandler(item.product)} >
+                                           
+                                        </div>
+                                       <div className="deletebtn">
+                                       <button  type="button" className="button" onClick={() => removeFromCartHandler(item.product)} >
                                                 Delete
                                             </button>
-                                        </div>
+                                       </div>
                                     </div>
                                     <div className="cart-price">
-                                        Rs. {item.price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}
+                                        ${item.price}
                                     </div>
                                 </li>
                             )
@@ -77,14 +81,17 @@ function CartScreen(props) {
                 </ul>
 
             </div>
+            <Divider/>
             <div className="cart-action">
-                <h3>
-                    Subtotal ( {cartItem.reduce((a, c) => (a + c.qty), 0)} items): Rs. 
-                     {cartItem.reduce((a, c) => a + c.price * c.qty, 0).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}
-                </h3>
-                <button type="button" onClick={checkoutHandler} className="button primary full-width" disabled={cartItem.length === 0}>
+                <p>
+                    Subtotal ( {cartItem.reduce((a, c) => (a + c.qty), 0)} items): $
+                     {cartItem.reduce((a, c) => a + c.price * c.qty, 0)}
+                </p>
+               <div className="buttonProceed">
+               <button type="button" onClick={checkoutHandler} className="text-right button primary full-width" disabled={cartItem.length === 0}>
                     Proceed to Checkout
       </button>
+               </div>
             </div>
         </div>
     )

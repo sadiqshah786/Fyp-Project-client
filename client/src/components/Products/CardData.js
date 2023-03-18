@@ -1,10 +1,9 @@
 // eslint-disable-next-line
-export default {
-    products: [
+    export const CardData = [
       {
         _id: '1',
         name: 'WOMENS BOOTS SHOES MACA',
-        category: 'Shoes',
+        category: 'Women',
         image: '/images/item-1.jpg',
         price: 60,
         brand: 'Bata',
@@ -14,18 +13,18 @@ export default {
       },
       {
         _id: '2',
-        name: 'WOMENS MINAM MEAGHAN',
-        category: 'Shoes',
+        name: 'Men MINAM MEAGHAN',
+        category: 'Women',
         image: '/images/item-2.jpg',
         price: 50,
         brand: ' Bata',
         rating: 4.2,
-        numReviews: 5
+        numReviews: 8
       },
       {
         _id: '3',
         name: 'MENS TAJA COMMISSIONER',
-        category: 'Shoes',
+        category: 'Men',
         image: '/images/item-3.jpg',
         price: 70,
         brand: ' Bata',
@@ -35,7 +34,7 @@ export default {
       }, {
         _id: '4',
         name: 'RUSS MENS SNEAKERS',
-        category: 'Shoes',
+        category: 'Men',
         image: '/images/item-4.jpg',
         price: 70,
         brand: ' Bata',
@@ -45,8 +44,8 @@ export default {
       },
       {
         _id: '5',
-        name: 'WOMENS BOOTS SHOES MACA',
-        category: 'Mens',
+        name: 'Womens BOOTS SHOES MACA',
+        category: 'Women',
         image: '/images/item-5.jpg',
         price: 80,
         brand: ' Mocassion',
@@ -56,8 +55,8 @@ export default {
       },
       {
         _id: '6',
-        name: 'WOMENS BOOTS SHOES MACA',
-        category: 'Mens',
+        name: 'Mens BOOTS SHOES MACA',
+        category: 'Men',
         image: '/images/item-6.jpg',
         price: 90,
         brand: ' North Star',
@@ -68,7 +67,7 @@ export default {
       {
         _id: '7',
         name: 'WOMENS BOOTS SHOES MACA',
-        category: 'Mens',
+        category: 'Women',
         image: '/images/item-7.jpg',
         price: 110,
         brand: 'Power',
@@ -79,7 +78,7 @@ export default {
       {
         _id: '8',
         name: 'WOMENS BOOTS SHOES MACA',
-        category: 'Shoes',
+        category: 'Women',
         image: '/images/item-8.jpg',
         price: 80,
         brand: 'Power',
@@ -89,8 +88,8 @@ export default {
       },
       {
         _id: '9',
-        name: 'WOMENS BOOTS SHOES MACA',
-        category: 'Mens',
+        name: 'MENS BOOTS SHOES MACA',
+        category: 'Men',
         image: '/images/item-9.jpg',
         price: 45,
         brand: 'Mens',
@@ -101,7 +100,7 @@ export default {
       {
         _id: '10',
         name: 'WOMENS BOOTS SHOES MACA',
-        category: 'Mens',
+        category: 'Women',
         image: '/images/item-10.jpg',
         price: 40,
         brand: 'Mens',
@@ -112,7 +111,7 @@ export default {
       {
         _id: '11',
         name: 'WOMENS BOOTS SHOES MACA',
-        category: 'Mens',
+        category: 'Women',
         image: '/images/item-11.jpg',
         price: 50,
         brand: 'Mens',
@@ -122,8 +121,8 @@ export default {
       },
       {
         _id: '12',
-        name: 'WOMENS BOOTS SHOES MACA',
-        category: 'Mens',
+        name: 'Mens BOOTS SHOES MACA',
+        category: 'Men',
         image: '/images/item-12.jpg',
         price: 55,
         brand: 'Mens',
@@ -134,7 +133,7 @@ export default {
       {
         _id: '13',
         name: 'WOMENS BOOTS SHOES MACA',
-        category: 'Mens',
+        category: 'Women',
         image: '/images/item-13.jpg',
         price: 85,
         brand: 'Mens',
@@ -145,7 +144,7 @@ export default {
       {
         _id: '14',
         name: 'WOMENS BOOTS SHOES MACA',
-        category: 'Mens',
+        category: 'Women',
         image: '/images/item-14.jpg',
         price: 80,
         brand: 'Mens',
@@ -156,7 +155,7 @@ export default {
       {
         _id: '15',
         name: 'WOMENS BOOTS SHOES MACA',
-        category: 'Mens',
+        category: 'Women',
         image: '/images/item-15.jpg',
         price: 65,
         brand: 'Mens',
@@ -167,7 +166,7 @@ export default {
       {
         _id: '16',
         name: 'WOMENS BOOTS SHOES MACA',
-        category: 'Mens',
+        category: 'Women',
         image: '/images/item-16.jpg',
         price: 70,
         brand: 'Mens',
@@ -178,7 +177,7 @@ export default {
       {
         _id: '17',
         name: 'MENS SHOES ',
-        category: 'Mens',
+        category: 'Men',
         image: '/ShoeImages/Bata1.jpg',
         price: 70,
         brand: 'Mens',
@@ -187,4 +186,4 @@ export default {
         countInStock: 7,
       },
     ]
-  }
+  

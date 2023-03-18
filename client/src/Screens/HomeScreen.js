@@ -5,19 +5,22 @@ import { listProducts } from '../actions/productActions';
 import Rating from '../component/Rating';
 import LoadingBox from '../component/LoadingBox';
 import MessageBox from '../component/MessageBox';
-import { url } from '../actions/BackendUrl';
+import { Card, Row,Col, Button } from 'antd';
+import Recomended from './Recomended'
+
+
 function HomeScreen(props) {
   const [searchKeyword, setSearchKeyword] = useState('');
   const [sortOrder, setSortOrder] = useState('');
   const category = props.match.params.id ? props.match.params.id : '';
   const productList = useSelector((state) => state.productList);
   const { products, loading, error } = productList;
+
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(listProducts(category));
-
     return () => {
-      //
     };
   }, [dispatch,category]);
 
@@ -29,12 +32,13 @@ function HomeScreen(props) {
     setSortOrder(e.target.value);
     dispatch(listProducts(category, searchKeyword, sortOrder));
   };
+ 
   return (
     <>{category && <h2>{category}</h2>}
 
-    <ul className="filter">
-      <li>
-        <form onSubmit={submitHandler}>
+    <div className="filter">
+      <div className='search'>
+      <form onSubmit={submitHandler}>
           <input type="search" 
             name="search"
             placeholder="Search.."
@@ -42,48 +46,76 @@ function HomeScreen(props) {
           />
           <button type="submit" className="btns">Search</button>
         </form>
-      </li>
-      <li>
-        Sort By{' '}
+      </div>
+      <div className='sort'>
+    <span>  Sort By{' '}</span>
         <select name="sortOrder" onChange={sortHandler}>
           <option value="">Newest</option>
           <option value="lowest">Lowest</option>
           <option value="highest">Highest</option>
         </select>
-      </li>
-    </ul>
+      </div>
+ 
+      
+    
+    </div>
     {loading ? (
       <LoadingBox></LoadingBox>
     ) : error ? (
       <MessageBox  variant="danger">{error}</MessageBox>
     ) : (
-      <ul className="products">
-        {products.map((product) => (
-          <li key={product._id} >
-            <div className="product">
-              <Link to={'/product/' + product._id}>
-                <img
-                  className="product-image"
-                  src={`${url}${product.image}`}
-                  alt={product.image}
-                 />
-              </Link>
-              <div className="product-name">
-                <Link to={'/product/' + product._id} className="imgcolor">{product.name}</Link>
-               Price: Rs {product.price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}
-              </div>
-              <div className="product-rating">
-                <Rating
-                  value={product.rating}
-                  text={product.numReviews + ' reviews'}
-                /> 
-              </div>
+      <div className='productDiv'>
+          <h1>Best Selling Products</h1>
+        <Row className="products">
+         {
+          products.map((items)=>{
+            return(
+              <Col sm={24} md={12} lg={12} xl={6} key={items?._id}>
+              <Card
+                hoverable
+                style={{
+                  position: "relative",
+                  margin: 10,
+                  cursor:"pointer"
+                }}
+                className = "productCard"
+                cover={<img alt="example" src={items.image} />}
+              >
+                <span className="category">
+                  {items.category}
+                </span>
+                <div className="cardBody">
+            <h4>{items.name}</h4>
+            <p>{items.price}</p>
+          </div>
+          <div>
+            <div className='description'>
+              <p>{items.description}</p>
             </div>
-          </li>
-        ))}
-      </ul>
+          <div className="product-rating">
+               <Rating
+                   value={items.rating}
+                   text={items.numReviews + ' reviews'}
+                 /> 
+               </div>
+          </div>
+          <Link to={'/product/' + items._id}>
+          <Button type='ghost'>Add to Cart</Button>
+          </Link>
+              </Card>
+            </Col>
+            )
+          })
+         }
+      </Row>
+      <>
+      
+      <Recomended/></>
+      </div>
     )}
         </>
   );
+ 
+
 }
 export default HomeScreen;

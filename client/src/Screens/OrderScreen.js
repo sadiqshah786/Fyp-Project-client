@@ -10,7 +10,6 @@ import {
   ORDER_DELIVER_RESET,
   ORDER_PAY_RESET,
 } from '../constants/orderConstants';
-import { url } from '../actions/BackendUrl';
 
 function OrderScreen(props) {
   const [sdkReady, setSdkReady] = useState(false);
@@ -31,7 +30,7 @@ function OrderScreen(props) {
   const { loading, order, error } = orderDetails;
   useEffect(() => {
     const addPayPalScript = async () => {
-      const { data } = await Axios.get(`${url}/api/config/paypal`);
+      const { data } = await Axios.get('/api/config/paypal');
       const script = document.createElement('script');
       script.type = 'text/javascript';
       script.src = `https://www.paypal.com/sdk/js?client-id=${data}`;
@@ -127,7 +126,7 @@ function OrderScreen(props) {
                     order.orderItems.map(item =>
                       <li key={item._id}>
                         <div className="cart-image">
-                          <img src={`${url}${item.image}`} alt="product" />
+                          <img src={item.image} alt="product" />
                         </div>
                         <div className="cart-name">
                           <div>
@@ -137,11 +136,11 @@ function OrderScreen(props) {
 
                           </div>
                           <div>
-                            Qty: {item.qty} x Rs. {item.price} = ${item.qty * item.price}
+                            Qty: {item.qty} x ${item.price} = ${item.qty * item.price}
                           </div>
                         </div>
                         <div className="cart-price">
-                          Rs. {item.price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}
+                          ${item.price}
                         </div>
                       </li>
                     )
@@ -159,19 +158,19 @@ function OrderScreen(props) {
               </li>
               <li>
                 <div>Items</div>
-                <div>Rs. {order.itemsPrice.toFixed(2).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}</div>
+                <div>${order.itemsPrice.toFixed(2)}</div>
               </li>
               <li>
                 <div>Shipping</div>
-                <div>Rs. {order.shippingPrice.toFixed(2).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}</div>
+                <div>${order.shippingPrice.toFixed(2)}</div>
               </li>
               <li>
                 <div>Tax</div>
-                <div>Rs. {order.taxPrice.toFixed(2).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}</div>
+                <div>${order.taxPrice.toFixed(2)}</div>
               </li>
               <li>
                 <div><strong>Order Total</strong></div>
-                <div><strong>Rs. {order.totalPrice.toFixed(2).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}</strong></div>
+                <div><strong>${order.totalPrice.toFixed(2)}</strong></div>
               </li>
               {!order.isPaid && (
                 <li className="placeorder-actions-payment">
