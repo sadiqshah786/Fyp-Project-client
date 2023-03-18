@@ -98,56 +98,6 @@ function Header() {
   return (
     <div className={classes.root}>
       <CustomSlider/>
-      
-
-
-      {/* <Paper square elevation={0} className={classes.header}>
-        <Typography style={{
-          fontSize: '20px', alignItems: 'center'
-          , justifyContent: 'center', display: 'flex', color: 'brown'
-        }}>{tutorialSteps[activeStep].label}
-
-        </Typography>
-      </Paper> */}
-      {/* <AutoPlaySwipeableViews
-        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-        index={activeStep}
-        onChangeIndex={handleStepChange}
-        enableMouseEvents
-      >
-        {tutorialSteps.map((step, index) => (
-          <div key={step.label}>
-            {Math.abs(activeStep - index) <= 2 ? (
-              <img className={classes.img} src={step.imgPath} alt={step.label} onClick={handleClick}></img>
-            ) : null}
-
-
-          </div>
-        ))}
-      </AutoPlaySwipeableViews>
-      <MobileStepper
-        steps={maxSteps}
-        position="static"
-        variant="text"
-        activeStep={activeStep}
-        nextButton={
-          <Button size="small" onClick={handleNext} disabled={activeStep === maxSteps - 1}>
-            Next
-            {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
-          </Button>
-        }
-        backButton={
-          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-            {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
-            Back
-          </Button>
-
-        }
-      />
-
-      <div className="p1">
-        <p style={{ color: 'green' }}>It started with a simple idea: Create quality, well-designed products that I wanted myself.</p>
-      </div> */}
     </div>
   );
 }

@@ -9,7 +9,7 @@ const ProductsCard = ({ ProductsCardData }) => {
     }
   return (
     <Row>
-      {ProductsCardData.map((items) => {
+      {ProductsCardData?.map((items) => {
         return (
           <Col sm={24} md={12} lg={12} xl={6} key={items?._id}>
             <Card
@@ -21,18 +21,18 @@ const ProductsCard = ({ ProductsCardData }) => {
                 cursor:"pointer"
               }}
               className="productCard"
-              cover={<img alt="example" src={items.image} />}
+              cover={<img alt="example" src={items?.image} />}
             >
               <span className="category">
-                {items.category}
+                {items?.category}
               </span>
              <div>
              <div className='data'>
-          <h4>{items.name}</h4>
-            <p>${items.price}</p>
+          <h4>{items?.name}</h4>
+            <p>${items?.price}</p>
           </div>
              </div>
-              <p className="text-base"><b>Brand:</b> {items.brand}...</p>
+              <p className="text-base"><b>Brand:</b> {items?.brand}...</p>
               <Button type='ghost'>Add to Cart</Button>
             </Card>
           </Col>

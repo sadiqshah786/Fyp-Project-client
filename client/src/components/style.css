@@ -7,7 +7,6 @@ input,p,a,label,button{
 .contact input{
     width: 100%;
 }
-
 .faq-main{
     width: 80%;
     margin: 30px auto;
@@ -58,18 +57,19 @@ input,p,a,label,button{
 ul li{
     list-style-type: none;
 }
-/* header  */
+/* header */
 header{
     padding:10px;
 }
 header ul {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-} 
-header ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* header ul li {
     margin-left: 20px;
 }
+*/
 header ul li a{
     color: #000 !important;
     font-size: 16px;
@@ -77,8 +77,25 @@ header ul li a{
 header ul li a:hover{
     color: #cc9756 !important;
 }
-/* About  */
-
+header.mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+}
+.mobile-header ul li {
+    margin-left: unset !important;
+}
+.navmob ul li{
+    margin-left: 10px !important;
+}
+.navmob h1{
+    color: #000;
+}
+.desktop-menu ul li {
+    margin-left: 30px;
+}
+/* About */
 .aboutSide{
     padding: 30px;
 }
@@ -109,20 +126,19 @@ header ul li a:hover{
     font-size: 40px;
     color: #556381;
 }
-/* slider  */
+/* slider */
 .slider-img{
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden
+    overflow: hidden 
 }
 .slider-img img{
     object-fit: cover;
-   width: 1500px !important;
-   height: 600px !important;
+    width: 1500px !important;
+    height: 600px !important;
 }
-
-/* banner  */
+/* banner */
 .banner{
     padding: 10px;
     margin: 50px 20px 0px 20px;
@@ -140,9 +156,7 @@ header ul li a:hover{
 .banner:hover img{
     transform: scale(1.1);
     transition: .5s ease-in-out;
-    
 }
-
 /* productTabs */
 .productTabs{
     text-align: center;
@@ -167,7 +181,8 @@ header ul li a:hover{
     width: 100px;
     text-align: center;
     justify-content: center;
-    /* background-color: #f0f0f0 !important; */
+   /* background-color: #f0f0f0 !important;
+    */
     border-radius: 30px;
     color: #000;
 }
@@ -180,7 +195,6 @@ header ul li a:hover{
 .ant-tabs-tab.ant-tabs-tab-active{
     color: #fff !important;
     background-color: #cc9756 !important;
-
 }
 .whyChoose{
     background-color: #f7f7f7;
@@ -195,12 +209,11 @@ header ul li a:hover{
     font-size: 18px;
     color: #cc9756;
     font-family: 'Montserrat', sans-serif;
-
 }
 .WhyCards .card{
     margin-bottom: 40px;
 }
-/* team  */
+/* team */
 .OurTeam{
     background-color: transparent;
 }
@@ -251,7 +264,6 @@ header ul li a:hover{
 .form p,.empty p,.cart p{
     font-size: 14px;
 }
-
 .buttonProceed{
     text-align: right;
 }
@@ -287,26 +299,34 @@ header ul li a:hover{
 }
 .drop{
     margin-left: 10px;
-} 
+}
 .ant-popover-inner-content ul{
     padding: unset !important;
 }
 .ant-popover-inner-content ul li a{
-    color:  #000 !important;
+    color: #000 !important;
     cursor: pointer;
 }
-
+.mobile-header{
+    display: none !important;
+}
+@media screen and (max-width:767px) {
+    .desktop-menu{
+        display: none;
+   }
+    .mobile-header{
+        display: flex !important;
+   }
+}
 @media screen and (max-width:600px) {
     .slider-img img{
         object-fit: contain;
         width: 600px !important;
-    }
+   }
     .ant-row.css-dev-only-do-not-override-1me4733 {
         display: block;
-    }
+   }
     .right{
         padding: unset;
-        
-    }
-    
+   }
 }

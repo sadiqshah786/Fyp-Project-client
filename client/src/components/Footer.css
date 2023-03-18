@@ -3,27 +3,24 @@
 	font-weight: 400;
 	color: #777;
 }
-
 .footer-distributed{
 	display: flex;
 	flex-wrap: wrap;
 	padding: 40px;
 	background-color: #f7f7f7;
 }
-
 .part{
 	width: 25%;
-	
 }
 ul h4{
 	font-size: 16px;
 	font-weight: 600;
 }
-ul li{
+.footer-distributed ul li{
 	font-size: 14px;
 	margin-bottom: 10px;
 }
-ul li span{
+.footer-distributed ul li span{
 	margin-left: 10px;
 }
 a:hover{
@@ -31,18 +28,17 @@ a:hover{
 }
 .footer-icons ul li a {
 	width: 40px;
-    height: 40px;
-    font-size: 18px;
-    line-height: 40px;
-    margin-right: 10px;
-    color: #777;
-    display: inline-block;
-    text-align: center;
-    background-color: #fff;
-    border-radius: 50%;
-    border: 1px solid #dedede;
+	height: 40px;
+	font-size: 18px;
+	line-height: 40px;
+	margin-right: 10px;
+	color: #777;
+	display: inline-block;
+	text-align: center;
+	background-color: #fff;
+	border-radius: 50%;
+	border: 1px solid #dedede;
 }
-
 .footer-icons ul li{
 	display: inline-block;
 	margin-right: 10px;
@@ -60,5 +56,14 @@ a:hover{
 .copyRight p{
 	font-size: 14px;
 	text-align: center;
+}
 
+@media screen and (max-width:767px) {
+	.footer-distributed{
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
+	.part{
+		width: 100%;
+	}
 }
