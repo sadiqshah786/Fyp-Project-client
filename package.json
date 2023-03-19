@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "type": "module",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "serve": "cd client && npm install && npm run build && cd .. && node --experimental-modules Server/server.js",
