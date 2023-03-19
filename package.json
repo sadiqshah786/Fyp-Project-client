@@ -5,7 +5,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --watch Server --exec node --experimental-modules Server/server.js",
     "serve": "cd client && npm install && npm run build && cd .. && node --experimental-modules Server/server.js",
     "build": "cd client && npm install && npm run build && cd .."
   },
