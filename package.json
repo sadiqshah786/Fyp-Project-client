@@ -5,6 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "serve": "cd client && npm install && npm run build && cd .. && node --experimental-modules Server/server.js",
     "build": "cd client && npm install && npm run build && cd .."
   },
