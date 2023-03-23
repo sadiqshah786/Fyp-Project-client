@@ -51,12 +51,7 @@ function Common({ name, visit, btname }) {
 remarkable facilities. 360-bazar is providing a platform to sellers where people withsmall business can uplift their business through power of our store. Our focus is toprovide completely secure environment to our customers by providing features of
 quality assurance and live complaint
               </p>
-              <p>
-                360-Bazar as describe above ,can lead to error free ,secure,
-                reliable and fast management system. Firstly user see different
-                style shoe then User add to cart items . if user buy first login
-                then payment method then order confirmed.
-              </p>
+             
             </div>
           </Col>
           <Col xl={12}>
