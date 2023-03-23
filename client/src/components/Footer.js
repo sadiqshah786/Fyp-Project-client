@@ -60,8 +60,8 @@ function Footer() {
             <h4>Contact Us</h4>
             <li>
               <EnvironmentOutlined />
-              <span>Daska, Sialkot</span>
-              Daska - 51010
+              <span>Rawalpindi lalazar</span>
+              Rawalpindi lalazar
             </li>
             <li>
               <PhoneOutlined />
@@ -69,7 +69,7 @@ function Footer() {
             </li>
             <li>
               <MailOutlined />
-              <span>test@test.com</span>
+              <span>manahilrasheed00@gmail.com</span>
             </li>
           </ul>
         </div>
