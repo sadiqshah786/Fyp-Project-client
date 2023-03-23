@@ -100,7 +100,7 @@ function Footer() {
         </div>
         <div className="copyRight">
           <p className="footer-company-name">
-            All Right Reservered © {new Date().getFullYear()} Shoe Point.
+            All Right Reservered © {new Date().getFullYear()} 360-Bazar .
           </p>
         </div>
       </footer>
