@@ -47,15 +47,12 @@ function Common({ name, visit, btname }) {
                 About <span className="styleText">Shoe-Point</span>
               </h1>
               <p>
-                The “Shoe Point” has been developed to override the problems
-                prevailing in the practicing manual system. This Application is
-                supported to eliminate and in some cases reduce hardship faced
-                by this existing system. Moreover This system is designed for
-                the particular need of the company to carry out operations in a
-                smooth and effective manner.’
+                360-Bazar is intended to provide convenience to both sellers and customers with their
+remarkable facilities. 360-bazar is providing a platform to sellers where people withsmall business can uplift their business through power of our store. Our focus is toprovide completely secure environment to our customers by providing features of
+quality assurance and live complaint
               </p>
               <p>
-                Shoe Point as describe above ,can lead to error free ,secure,
+                360-Bazar as describe above ,can lead to error free ,secure,
                 reliable and fast management system. Firstly user see different
                 style shoe then User add to cart items . if user buy first login
                 then payment method then order confirmed.
